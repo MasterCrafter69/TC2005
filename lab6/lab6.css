@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.help {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input[type="password"]:focus + .help {
+    color: #0056b3;
+    font-weight: bold;
+}
+
