@@ -1,0 +1,15 @@
+{
+  "name": "lab11",
+  "version": "1.0.0",
+  "description": "laboratorio 11 express",
+  "main": "lab11.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TC2005"
+  },
+  "author": "Daniel Aguilar Darío",
+  "license": "ISC"
+}
