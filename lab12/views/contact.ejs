@@ -1,0 +1,22 @@
+<%- include('partials/head', {title: 'Contacto'}) %>
+<%- include('partials/navbar') %>
+
+<div class="container mx-auto mt-8">
+    <h1 class="text-4xl font-bold text-center mb-4">Contacto</h1>
+    <div class="flex justify-center">
+        <div class="w-full max-w-md">
+            <form action="/send-email" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        r2d2.dany@gmail.com
+                    </label>
+                </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+

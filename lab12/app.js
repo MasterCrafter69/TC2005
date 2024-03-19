@@ -17,9 +17,9 @@ const userRoutes = require('./routes/userRoutes');
 app.use(mainRoutes);
 app.use(userRoutes);
 
-app.use((req, res, next) => {
-    res.status(404).render('404', { title: 'Página no encontrada' });
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Algo salió mal!');
 });
 
-const PORT = process.env.PORT || 3000;
-
+app.listen(3000);
