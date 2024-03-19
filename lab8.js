@@ -1,0 +1,133 @@
+//ejercicio 1
+function promedio(array){
+	const suma = array.reduce(acumulador, actual) => acumulador + actual, 0);
+	return suma / array.length;
+}
+
+const numeros = [10, 20, 30, 40, 50]
+console.log("El promedio es:" ${Promedio(numeros)}");
+
+//ejercicio 2
+const fs = require('fs');
+
+fs.writeFileSync("Hola.txt", "Adiós");
+
+//ejercicio 3
+function areaCirculo(radio) {
+    return Math.PI * radio ** 2;
+}
+
+let radio = 5;
+console.log(`El área del círculo con radio ${radio} es: ${areaCirculo(radio)}`);
+
+//
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+	res.write('
+		<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio de Tecnología</title>
+    <link rel="stylesheet" href="lab3.css">
+
+</head>
+<body>
+    <header>
+        <h1>Laboratorio 1</h1>
+    </header>
+
+    <main>
+        <section id="contenido">
+            <h2>Me llamo Daniel Aguilar Darío</h2>
+	    <h2>Matrícula:A01710975</h2>
+	    <h2>Correo: A01710975@tec.mx</h2>
+
+
+            <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+            <p>Internet es una red global de computadoras interconectadas que permite la comunicación y el intercambio de datos entre ellas. La World Wide Web, o simplemente la web, es un sistema de información donde los documentos y otros recursos web son identificados por URLs, interconectados por enlaces y accesibles a través de Internet.</p>
+
+            <h3>¿Cuáles son las partes de un URL?</h3>
+            <p>Un URL incluye el protocolo (como http o https), el nombre de dominio (o dirección IP), y opcionalmente, el puerto, el path al recurso, una cadena de consulta (query string) y un fragmento.</p>
+
+            <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+            <p>GET solicita la representación de un recurso. HEAD pide los encabezados de respuesta similares a los de GET, pero sin el cuerpo de respuesta. POST envía datos al servidor para crear o actualizar un recurso. PUT reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición. PATCH aplica modificaciones parciales a un recurso. DELETE elimina un recurso especificado.</p>
+
+            <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+            <p>Generalmente se utiliza POST para enviar un formulario que incluye datos sensibles como usuario y contraseña, ya que POST no incluye la información enviada en la URL y permite el envío de datos más grandes de forma segura.</p>
+
+            <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+            <p>El método GET se utiliza cuando se accede a una página a través de un URL en un navegador web, solicitando la representación de un recurso específico.</p>
+
+            <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+            <p>Un código 200 significa que la solicitud ha tenido éxito. No ocurrió ningún error.</p>
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+            <p>Sí, es responsabilidad del desarrollador, ya que un error 404 indica que un recurso no fue encontrado en el servidor, lo cual podría deberse a un enlace roto o un error en la dirección URL que necesita ser corregido.</p>
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+            <p>Sí, porque un error 500 indica un error interno del servidor, lo que sugiere un problema en la configuración del servidor o en el código del sitio web que el desarrollador necesita investigar y solucionar.</p>
+
+            <h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+            <p>Significa que el atributo o elemento ya no se recomienda para su uso y podría dejar de ser funcional en futuras versiones de navegadores. Ejemplos incluyen la etiqueta <code>&lt;font&gt;</code>, los atributos como <code>align</code> en varias etiquetas, y la etiqueta <code>&lt;center&gt;</code>.</p>
+
+            <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+            <p>HTML5 introduce nuevas etiquetas semánticas, mejora el soporte para aplicaciones web con APIs, incluye soporte nativo para multimedia con <code>&lt;video&gt;</code> y <code>&lt;audio&gt;</code>, y elimina etiquetas y atributos obsoletos.</p>
+
+            <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+            <p>Una tabla se compone de la etiqueta <code>&lt;table&gt;</code>, con filas (<code>&lt;tr&gt;</code>), columnas (<code>&lt;td&gt;</code> o <code>&lt;th&gt;</code> para celdas de encabezado), opcionalmente agrupadas en <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, y <code>&lt;tfoot&gt;</code>.</p>
+
+            <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+            <p>Los controles incluyen <code>&lt;input&gt;</code> (con diversos tipos como text, password, email, etc.), <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>, entre otros. HTML5 añade nuevos tipos de input como date, number, range, y email.</p>
+
+            <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+            <p>Firefox tiene 546 puntos de 594 de HTML5</p>
+
+            <h3>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h3>
+            <p>El ciclo de vida de los sistemas de información incluye la planificación, análisis, diseño, implementación, y mantenimiento. El ciclo de desarrollo de sistemas de información sigue fases similares, enfocándose en el desarrollo práctico del sistema, desde su concepción hasta su despliegue y revisión continua.</p>
+            <h3>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</h3>
+	    <p>Organizar mejor el CSS para evitar usarlo. Usarlo cuando sea realmente necesario. </p>
+	    <h3>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h3>
+	    <p>Para que no afecte la legibilidad del texto, que se vea bien en diferentes tamaños de pantalla y que no incremente innecesariamente los tiempos de carga de la página</p>
+	    <h3>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de una propiedad de estilo entre %, px y pt?</h3>
+	    <p>% para diseños responsivos y fluidos </p>
+	    <p>px para tamaños fijos y precisión en elementos que no requieren ajustarse con el tamaño de pantalla</p>
+	    <p>Evitar pt que es para impresión</p>
+
+	    <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h3>
+	    <p>Reduciendo el tamaño de los CSS disminuye el tiempo de carga de la página al reducir el ancho de banda necesario para descargar los estilos</p>
+
+	    <h3>Teorema de Pitágoras</h3>
+	    <p>El teorema de Pitágoras es una relación en geometría euclidiana entre los tres lados de un triángulo rectángulo. Afirma que el área del cuadrado cuyo lado es la hipotenusa es igual a la suma de las áreas de los cuadrados cuyos lados son los catetos.</p>
+	    <script src="lab4.js"></script>
+
+	    <h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript</h3>
+	    <p>Ambos lenhuajes comparten convenciones de sintaxis, ambos permiten la programación orientada a objetos</p>
+	    <p>JavaScript esta diseñado para ejecutarse en navegadores web</p>
+
+
+	    <h3>¿Qué métodos tiene el objeto Date?</h3>
+	    <p>getDate(), getMonth(), getFullYear(), getHours(),getTime() </p>
+
+	    <h3>¿Qué métodos tienen los arreglos?</h3>
+	    <p>push(), pop(), shift(), unshift(), slice()</p>
+
+	    <h3>¿Cómo se declara una variable con alcance local dentro de una función? </h3>
+	    <p>Se utiliza "let" o "const" dentro del cuerpo de la función</p>
+
+	    <h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+	    <p>Dificultad en el testing y depuración, problemas de seguridad</p>
+
+	</section>
+    </main>
+
+    <footer>
+        <p>Editor utilizado:  <a href="https://www.vim.org//">Vim</a></p>
+    </footer>
+</body>
+</html>')
+});
+
+server.listen(3000);
