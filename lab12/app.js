@@ -1,25 +1,40 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+const session = require('express-session');
+const csrf = require('csurf');
+const bodyParser = require('body-parser');
+const path = require('path');
 
+app.use(session({
+  secret: 'string secreto muy largo', 
+  resave: false,
+  saveUninitialized: false,
+}));
+
+// Middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Rutas
+const rutaUser = require('./routes/user.routes');
+app.use('/user', rutaUser)
+
 const mainRoutes = require('./routes/mainRoutes');
-const userRoutes = require('./routes/userRoutes');
+app.use('/',mainRoutes);
 
-app.use(mainRoutes);
-app.use(userRoutes);
+const formularioRutas = require('./routes/Form.routes');
+app.use('/',formularioRutas);
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Algo salió mal!');
+//Manejo de errores
+app.use((request, response, next) => {
+  response.status(404);
+  response.sendFile(
+    path.join(__dirname, 'views', '404.html')
+  );
 });
 
 app.listen(3000);
